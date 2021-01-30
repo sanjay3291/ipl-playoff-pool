@@ -1,0 +1,60 @@
+/* navigation bar */
+#scanfcode {
+  border-radius: 0px;
+  background: #fff;
+  padding: 10px;
+  font-size: 17px;
+}
+/* logo or main heading */
+#logo {
+  font-size: 25px;
+  font-weight: bolder;
+  color: #004ba0;
+  letter-spacing: 2px;
+}
+/* navigation links*/
+#link a {
+  color: #004ba0;
+  margin: 0 10px 0 10px;
+  letter-spacing: 1.5px;
+  border-radius: 50px;
+}
+/* navigation link with right border */
+#first-link {
+  padding-right: 6px;
+  border-right: solid 1px #ccc;
+}
+/* sign up link button and toggle button */
+#toggle-button {
+  color: #f2f2f2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  background-color: #004ba0;
+  line-height: 17px;
+}
+
+#button-link {
+  color: #f2f2f2;
+  border-style: solid;
+  border-width: 1px;
+  border-color: rgba(0, 0, 0, 0.2);
+  border-radius: 50px;
+  background-color: #004ba0;
+  line-height: 17px;
+}
+
+#button-link a {
+  color: #f2f2f2;
+  background-color: #004ba0;
+}
+
+#button-link a:hover {
+  color: #004ba0;
+  background-color: #d1ab3e;
+}
+
+#button-link:hover {
+  background-color: #d1ab3e;
+}

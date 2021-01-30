@@ -1,0 +1,67 @@
+.faqHeader {
+  font-family: "Open Sans", sans-serif;
+  font-size: 40px;
+  margin: 20px;
+}
+
+#main {
+    margin: 50px 0;
+  }
+  
+  #main #faq .card {
+    margin-bottom: 30px;
+    border: 0;
+    font-size: 18px;
+    text-align: left;
+    white-space: pre-line;
+  }
+  
+  #main #faq .card .card-header {
+    border: 0;
+    -webkit-box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+            box-shadow: 0 0 20px 0 rgba(213, 213, 213, 0.5);
+    border-radius: 2px;
+    padding: 0;
+  }
+  
+  #main #faq .card .card-header .btn-header-link {
+    color: #fff;
+    display: block;
+    text-align: left;
+    background: #D1AB3E;
+    color: #222;
+    padding: 20px;
+    font-size: 20px;
+    font-size: 900;
+  }
+  
+  #main #faq .card .card-header .btn-header-link:after {
+    content: "\f107";
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    float: right;
+  }
+  
+  #main #faq .card .card-header .btn-header-link.collapsed {
+    background: #004BA0;
+    color: #fff;
+  }
+  
+  #main #faq .card .card-header .btn-header-link.collapsed:after {
+    content: "\f106";
+  }
+  
+  #main #faq .card .collapsing {
+    background: #D1AB3E;
+    line-height: 30px;
+  }
+  
+  #main #faq .card .collapse {
+    border: 0;
+  }
+  
+  #main #faq .card .collapse.show {
+    background: #D1AB3E;
+    line-height: 30px;
+    color: #222;
+  }
