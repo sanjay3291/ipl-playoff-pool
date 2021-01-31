@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import "./headerSpace.scss";
+import history from './../../history';
 
 
 class HeaderSpace extends Component {
@@ -29,6 +30,7 @@ class HeaderSpace extends Component {
                 className="btn btn-primary btn-lg  mr-2 ml-2"
                 type="submit"
                 id="mybuttons"
+                onClick={() => history.push('/Register')}
               >
                 Register
               </button>

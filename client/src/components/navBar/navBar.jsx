@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+
 import IPL_Logo from "./IPL_Logo.svg";
 import "./navBar.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +24,7 @@ class Navbar extends Component {
                 <FontAwesomeIcon icon={faBars} />
               </span>
             </button>
-            <a id="logo" className="navbar-brand mr-auto" href="#">
+            <a id="logo" className="navbar-brand mr-auto"  href="/">
               <img
                 src={IPL_Logo}
                 width="40"
@@ -53,10 +54,10 @@ class Navbar extends Component {
                 </ul>
               </li>
               <li>
-                <a href="#">About</a>
+                <a href="/About">About</a>
               </li>
               <li id="button-link">
-                <a className="" href="#">
+                <a className="" href="/Register">
                   Register
                 </a>
               </li>
@@ -69,69 +70,3 @@ class Navbar extends Component {
 }
 
 export default Navbar;
-
-/*<nav classNameName="navbar navbar-expand-lg navbar-dark ">
-        <a className="navbar-brand" href="#">
-          <img
-            src={IPL_Logo}
-            width="30"
-            height="30"
-            className="d-inline-block align-top"
-            alt="IPL_Logo"
-          ></img>
-          Ipl playoff pool
-        </a>
-
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#basicExampleNav"
-          aria-controls="basicExampleNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
-        </button>
-
-        <div className="collapse navbar-collapse" id="basicExampleNav">
-          <ul className="navbar-nav ml-auto mr-3 pr-4">
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                Register
-                <span className="sr-only">(current)</span>
-              </a>
-            </li>
-            <li className="nav-item dropdown active">
-              <a
-                className="nav-link dropdown-toggle"
-                id="navbarDropdownMenuLink"
-                data-toggle="dropdown"
-                aria-haspopup="true"
-                aria-expanded="false"
-              >
-                Groups
-              </a>
-              <div
-                className="dropdown-menu dropdown-primary"
-                aria-labelledby="navbarDropdownMenuLink"
-              >
-                <a className="dropdown-item" href="#">
-                  BumChikBum
-                </a>
-                <a className="dropdown-item" href="#">
-                  LocalBoys
-                </a>
-                <a className="dropdown-item" href="#">
-                  NewGroup
-                </a>
-              </div>
-            </li>
-            <li className="nav-item active">
-              <a className="nav-link" href="#">
-                About
-              </a>
-            </li>
-          </ul>
-        </div>
-      </nav>*/

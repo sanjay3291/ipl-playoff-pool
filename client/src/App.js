@@ -1,37 +1,32 @@
 import React, { Component } from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+
 import "./App.css";
-//import axios from "axios";
+import axios from "axios";
 import Navbar from "./components/navBar/navBar";
-import HeaderSpace from "./components/headerSpace/headerSpace";
-import FAQ from "./components/faq/faq";
+import Routes from "./Routes";
 
 class App extends Component {
-  /*state = {
-    response: {}
+  state = {
+    response: {},
   };
-  
+
   componentDidMount() {
-    axios.get('/api/v1/say-something').then((res) => {
+    axios.get("/sayHello").then((res) => {
       const response = res.data;
-      this.setState({response});
+      this.setState({ response });
+      console.log(response);
     });
-  }*/
-
-  constructor(props) {
-    super(props);
-    this.myRef = React.createRef();
   }
-
-
-  scrollToFAQ = () => this.myRef.current.scrollIntoView();
 
   render() {
     return (
-      <div className="App">
-        <Navbar />
-        <HeaderSpace scroll={this.scrollToFAQ} />
-        <FAQ refProp={this.myRef} />
-      </div>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <Routes />
+        </div>
+      </Router>
     );
   }
 }
