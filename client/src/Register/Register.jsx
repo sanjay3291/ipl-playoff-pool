@@ -1,11 +1,15 @@
-import React, { Component } from 'react';
-
+import React, { Component } from "react";
+import RegistrationForm from "./../components/registrationForm/registrationForm"
 
 class Register extends Component {
-    state = {  }
-    render() { 
-        return ( <div><h1>Welcome to registration</h1></div> );
-    }
+  
+  render() {
+    return (
+      <div>
+        <RegistrationForm />
+      </div>
+    );
+  }
 }
- 
+
 export default Register;

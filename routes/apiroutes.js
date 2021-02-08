@@ -1,8 +1,9 @@
-
-const express = require('express');
+const express = require("express");
 const router = express.Router();
-const controllers = require('../controllers/apicontrollers');
+const controllers = require("../controllers/apicontrollers");
 
-router.get('/sayHello', controllers.sayHello);
+router.get("/sayHello", controllers.sayHello);
+
+router.post("/submitData", controllers.submitData);
 
 module.exports = router;
