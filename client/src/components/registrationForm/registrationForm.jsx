@@ -58,12 +58,48 @@ class RegistrationForm extends Component {
               onSubmit={async (values, { setSubmitting, resetForm }) => {
                 serverObject.username = values.username;
                 serverObject.groupname = values.groupname;
-                serverObject.teamsObject = teamsObject;
+                var teamsObject_updated = [
+                  {
+                    id: 8,
+                    team: "CSK",
+                  },
+                  {
+                    id: 7,
+                    team: "DC",
+                  },
+                  {
+                    id: 6,
+                    team: "KKR",
+                  },
+                  {
+                    id: 5,
+                    team: "KXIP",
+                  },
+                  {
+                    id: 4,
+                    team: "MI",
+                  },
+                  {
+                    id: 3,
+                    team: "RCB",
+                  },
+                  {
+                    id: 2,
+                    team: "RR",
+                  },
+                  {
+                    id: 1,
+                    team: "SRH",
+                  },
+                ];
+                if (Object.keys(teamsObject).length === 0) {
+                  serverObject.teamsObject = teamsObject_updated;
+                } else {
+                  serverObject.teamsObject = teamsObject;
+                }
 
                 await axios.post("/submitData", serverObject).then(
                   (res) => {
-                    const response = res.data;
-                    console.log(response);
                     this.notifysuccess();
                   },
                   (error) => {

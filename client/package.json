@@ -17,12 +17,16 @@
     "bootstrap": "^4.6.0",
     "formik": "^2.2.6",
     "jquery": "^3.5.1",
+    "material-table": "^1.69.2",
     "node-sass": "^4.14.1",
     "popper.js": "^1.16.1",
     "react": "^17.0.1",
     "react-beautiful-dnd": "^13.0.0",
     "react-bootstrap": "^1.4.3",
+    "react-data-table-component": "^7.0.0-alpha-5",
     "react-dom": "^17.0.1",
+    "react-icons": "^4.2.0",
+    "react-native-leaderboard": "^1.0.6",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "react-sortable-hoc": "^1.11.0",
@@ -59,6 +63,7 @@
   },
   "proxy": "http://localhost:5000",
   "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.12.13",
     "@types/sortablejs": "^1.10.6"
   }
 }

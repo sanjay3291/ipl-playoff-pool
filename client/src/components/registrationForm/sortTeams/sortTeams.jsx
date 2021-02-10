@@ -50,7 +50,9 @@ class SortTeams extends Component {
 
   render() {
     return (
-      <DragDropContext onDragEnd={this.onDragEnd}>
+      <div style={{
+        backgroundColor: "white"}}>
+      <DragDropContext onDragEnd={this.onDragEnd} >
         {this.state.columnOrder.map((columnId) => {
           const column = this.state.columns[columnId];
           const teams = column.teamIds.map(
@@ -60,6 +62,7 @@ class SortTeams extends Component {
           return <Column key={column.id} column={column} teams={teams} />;
         })}
       </DragDropContext>
+      </div>
     );
   }
 }

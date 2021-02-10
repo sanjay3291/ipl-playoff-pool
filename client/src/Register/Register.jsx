@@ -5,7 +5,8 @@ class Register extends Component {
   
   render() {
     return (
-      <div>
+      <div className= "container-fluid" style={{
+        backgroundColor: "#add8e6"}}>
         <RegistrationForm />
       </div>
     );

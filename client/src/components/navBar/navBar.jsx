@@ -24,7 +24,7 @@ class Navbar extends Component {
                 <FontAwesomeIcon icon={faBars} />
               </span>
             </button>
-            <a id="logo" className="navbar-brand mr-auto"  href="/">
+            <a id="logo" className="navbar-brand mr-auto" href="/">
               <img
                 src={IPL_Logo}
                 width="40"
@@ -38,18 +38,18 @@ class Navbar extends Component {
           <div className="collapse navbar-collapse" id="myNavbar">
             <ul id="link" className="nav navbar-nav navbar-right ml-auto">
               <li className="dropdown" id="first-link">
-                <a className="dropdown-toggle" data-toggle="dropdown" href="#">
+                <a className="dropdown-toggle" data-toggle="dropdown" href="/">
                   Groups
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="#">BumChikBum</a>
+                    <a href="/Groups/BumChikBum">BumChikBum</a>
                   </li>
                   <li>
-                    <a href="#">LocalBoys</a>
+                    <a href="/Groups/LocalBoys">LocalBoys</a>
                   </li>
                   <li>
-                    <a href="#">NewGroup</a>
+                    <a href="/">NewGroup</a>
                   </li>
                 </ul>
               </li>
