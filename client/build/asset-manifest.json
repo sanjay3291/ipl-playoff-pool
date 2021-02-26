@@ -1,0 +1,35 @@
+{
+  "files": {
+    "main.css": "/static/css/main.234d8f3e.chunk.css",
+    "main.js": "/static/js/main.4fd4810c.chunk.js",
+    "main.js.map": "/static/js/main.4fd4810c.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.c158cdb7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.c158cdb7.js.map",
+    "static/css/2.03991310.chunk.css": "/static/css/2.03991310.chunk.css",
+    "static/js/2.193c2fa2.chunk.js": "/static/js/2.193c2fa2.chunk.js",
+    "static/js/2.193c2fa2.chunk.js.map": "/static/js/2.193c2fa2.chunk.js.map",
+    "static/js/3.4fa6111c.chunk.js": "/static/js/3.4fa6111c.chunk.js",
+    "static/js/3.4fa6111c.chunk.js.map": "/static/js/3.4fa6111c.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.03991310.chunk.css.map": "/static/css/2.03991310.chunk.css.map",
+    "static/css/main.234d8f3e.chunk.css.map": "/static/css/main.234d8f3e.chunk.css.map",
+    "static/js/2.193c2fa2.chunk.js.LICENSE.txt": "/static/js/2.193c2fa2.chunk.js.LICENSE.txt",
+    "static/media/IPL_Logo.3f8b7999.svg": "/static/media/IPL_Logo.3f8b7999.svg",
+    "static/media/chennai_super_kings_logo.668bcb24.png": "/static/media/chennai_super_kings_logo.668bcb24.png",
+    "static/media/delhi_capitals_logo.9462f60a.png": "/static/media/delhi_capitals_logo.9462f60a.png",
+    "static/media/headerSpace.scss": "/static/media/ipl_champions_2020.049445f2.jpg",
+    "static/media/kolkata_knight_riders_logo.f04d7a97.jpg": "/static/media/kolkata_knight_riders_logo.f04d7a97.jpg",
+    "static/media/mumbai_indians_logo.d2b9bc4a.png": "/static/media/mumbai_indians_logo.d2b9bc4a.png",
+    "static/media/punjab_kings_logo.bcaa916c.png": "/static/media/punjab_kings_logo.bcaa916c.png",
+    "static/media/rajasthan_royals_Logo.b8282b02.png": "/static/media/rajasthan_royals_Logo.b8282b02.png",
+    "static/media/royal_challengers_bangalore_logo.bd8af2e8.png": "/static/media/royal_challengers_bangalore_logo.bd8af2e8.png",
+    "static/media/sunrisers_hyderabad.68da38eb.png": "/static/media/sunrisers_hyderabad.68da38eb.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c158cdb7.js",
+    "static/css/2.03991310.chunk.css",
+    "static/js/2.193c2fa2.chunk.js",
+    "static/css/main.234d8f3e.chunk.css",
+    "static/js/main.4fd4810c.chunk.js"
+  ]
+}
