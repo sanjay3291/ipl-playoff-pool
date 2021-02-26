@@ -83,9 +83,9 @@ const getGroupData = async (req, res, next) => {
               points = points + docs[i].teamsObject[k].id;
             }
           }
-        } else if (colObj[j].teamName == "Kings XI Punjab") {
+        } else if (colObj[j].teamName == "Punjab Kings") {
           for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "KXIP") {
+            if (docs[i].teamsObject[k].team === "PBKS") {
               points = points + docs[i].teamsObject[k].id;
             }
           }
@@ -140,7 +140,7 @@ const getGroupData = async (req, res, next) => {
           picksTableDataSingle.pointsArray[1] = docs[i].teamsObject[k].id;
         } else if (docs[i].teamsObject[k].team === "KKR") {
           picksTableDataSingle.pointsArray[2] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "KXIP") {
+        } else if (docs[i].teamsObject[k].team === "PBKS") {
           picksTableDataSingle.pointsArray[3] = docs[i].teamsObject[k].id;
         } else if (docs[i].teamsObject[k].team === "MI") {
           picksTableDataSingle.pointsArray[4] = docs[i].teamsObject[k].id;
