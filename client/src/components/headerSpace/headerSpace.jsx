@@ -11,7 +11,7 @@ class HeaderSpace extends Component {
     return (
       <div className="container-fluid">
         <div className="jumbotron bg-cover bg-overlay position-relative">
-          <div className="container funky centered" aria-multiline="true">
+          <div className="container-fluid funky centered" aria-multiline="true">
             <h1 className="mb-3">IPL Playoff Pool</h1>
             <h2 className="mb-3">
               This is a fun competition to play among your friends to predict

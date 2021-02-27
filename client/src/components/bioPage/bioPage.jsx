@@ -5,7 +5,7 @@ class BioPage extends Component {
   state = {};
   render() {
     return (
-      <div class="container">
+      <div class="container-fluid">
         <blockquote class="oval-thought-border">
           <p>
             Hello, Thanks for visiting the site.<br />

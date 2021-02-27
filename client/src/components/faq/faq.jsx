@@ -15,7 +15,7 @@ class faq extends Component {
         <br />
         <div ref={this.props.refProp} className="faqHeader">{data.title}</div>
         <div id="main">
-          <div className="container">
+          <div className="container-fluid">
             <div className="accordion" id="faq">
               <Question
                 title={data.rows[0].title}
