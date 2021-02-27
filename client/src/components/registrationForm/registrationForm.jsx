@@ -44,7 +44,7 @@ class RegistrationForm extends Component {
     const { teamsObject, serverObject } = this.state;
 
     return (
-      <div className="container">
+      <div className="container-fluid">
         <div className="row mb-3">
           <div className="col-12 text-center">
             <h1 className="mt-5">Enter your details</h1>
