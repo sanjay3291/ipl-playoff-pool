@@ -51,7 +51,7 @@ class RegistrationForm extends Component {
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col-lg-12 text-left">
+          <div className="col-12 text-left">
             <Formik
               initialValues={{ username: "", groupname: "" }}
               validationSchema={NameSchema}
@@ -73,7 +73,7 @@ class RegistrationForm extends Component {
                   },
                   {
                     id: 5,
-                    team: "KXIP",
+                    team: "PBKS",
                   },
                   {
                     id: 4,
