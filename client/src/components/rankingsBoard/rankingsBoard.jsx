@@ -54,9 +54,9 @@ export default function RankingsBoard(props) {
   }, []);
 
   return (
-    <div className="container mt-5 mb-5 p-5">
+    <div className="container-fluid  mt-5 mb-5 p-5">
       <div>
-        <h1 style={{ color: "#004ba0" }}>Leader Board</h1>
+        <h1 className="text-center" style={{ color: "#004ba0" }}>Leader Board</h1>
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-4">

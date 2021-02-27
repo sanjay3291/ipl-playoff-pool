@@ -64,7 +64,7 @@ class PointsTable extends Component {
   render() {
     //console.log(this.state.data);
     return (
-      <div className="container mt-5 containers " style={{
+      <div className="container-fluid mt-5 containers " style={{
         backgroundColor: "#add8e6",
       }}>
         <div>

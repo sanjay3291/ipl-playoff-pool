@@ -78,7 +78,7 @@ export default function PicksTable(props) {
   }, []);
 
   return (
-    <div className="container mt-5 mb-5 p-5">
+    <div className="container-fluid mt-5 mb-5 p-5">
       <div className={classes.root}>
         <Accordion>
           <AccordionSummary
@@ -107,7 +107,7 @@ export default function PicksTable(props) {
                           <StyledTableCell>CSK</StyledTableCell>
                           <StyledTableCell>DC</StyledTableCell>
                           <StyledTableCell>KKR</StyledTableCell>
-                          <StyledTableCell>KXIP</StyledTableCell>
+                          <StyledTableCell>PBKS</StyledTableCell>
                           <StyledTableCell>MI</StyledTableCell>
                           <StyledTableCell>RCB</StyledTableCell>
                           <StyledTableCell>RR</StyledTableCell>
