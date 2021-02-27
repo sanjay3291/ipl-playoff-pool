@@ -24,10 +24,10 @@
 
 .funky {
   color: white;
-  mix-blend-mode: difference;
-  font: 900 10vmin/10vh cookie, cursive;
-  filter: drop-shadow(0.02em 0.02em #004BA0);
-  text-align: center;
+  mix-blend-mode: difference !important;
+  font: 900 10vmin/10vh cookie, cursive !important; 
+  filter: drop-shadow(0.02em 0.02em #004BA0) !important;
+  text-align: center !important;
 }
 
 #mybuttons{
