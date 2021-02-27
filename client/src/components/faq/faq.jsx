@@ -13,8 +13,8 @@ class faq extends Component {
         <br />
         <br />
         <br />
-        <div class="container-fluid pr-3 pl-3">
-          <div ref={this.props.refProp} className="faqHeader">
+        <div class="container-fluid px-5 mx-3">
+          <div ref={this.props.refProp} className="faqHeader text-center">
             {data.title}
           </div>
           <div id="main">
