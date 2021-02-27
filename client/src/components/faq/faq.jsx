@@ -8,7 +8,7 @@ class faq extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container-fluid">
         <br />
         <br />
         <br />
