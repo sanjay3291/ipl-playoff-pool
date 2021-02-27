@@ -46,12 +46,12 @@ class RegistrationForm extends Component {
     return (
       <div className="container">
         <div className="row mb-3">
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+          <div className="col-12 text-center">
             <h1 className="mt-5">Enter your details</h1>
           </div>
         </div>
         <div className="row mb-3">
-          <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+          <div className="col-12 text-left">
             <Formik
               initialValues={{ username: "", groupname: "" }}
               validationSchema={NameSchema}
@@ -114,7 +114,7 @@ class RegistrationForm extends Component {
               {({ touched, errors, isSubmitting }) => (
                 <Form>
                   <div className="row mb-3 justify-content-center">
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                    <div className="col-sm-6 text-left">
                       <div className="form-group">
                         <label htmlFor="username">
                           <h3>User Name</h3>
@@ -138,7 +138,7 @@ class RegistrationForm extends Component {
                     </div>
                   </div>
                   <div className="row mb-3 justify-content-center">
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-left">
+                    <div className="col-sm-6 text-left">
                       <div className="form-group">
                         <label htmlFor="groupname">
                           <h3>Group Name</h3>
@@ -162,12 +162,12 @@ class RegistrationForm extends Component {
                     </div>
                   </div>
                   <div className="row mb-3 justify-content-center">
-                    <div className="col-xs-6 col-sm-6 col-md-6 col-lg-6 text-center">
+                    <div className="col-sm-6 text-center">
                       <SortTeams sendTeamsObject={this.sendTeamsObject} />
                     </div>
                   </div>
                   <div className="row mb-3 justify-content-center">
-                    <div className="col-xs-1 col-sm-1 col-md-1 col-lg-1 text-center">
+                    <div className="col-lg-1 text-center">
                       <button
                         type="submit"
                         className="btn-lg btn-primary btn-block"
@@ -178,7 +178,7 @@ class RegistrationForm extends Component {
                     </div>
                   </div>
                   <div className="row mb-3">
-                    <div className="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+                    <div className="col-lg-12 text-center">
                       <ToastContainer />
                     </div>
                   </div>
