@@ -1,8 +1,10 @@
-const Datastore = require("nedb");
 var cheerio = require("cheerio");
 var axios = require("axios");
+var AWS = require("aws-sdk");
 
-const database = new Datastore("database.db");
+AWS.config.update({
+  region: "us-west-1",
+});
 
 const sayHello = (req, res, next) => {
   res.status(200).json({
@@ -11,16 +13,37 @@ const sayHello = (req, res, next) => {
 };
 
 const submitData = (req, res, next) => {
-  const data = req.body;
+  const userData = req.body;
   const timestamp = Date.now();
-  data.timestamp = timestamp;
-  database.insert(data);
+  userData.timestamp = timestamp;
+
+  var docClient = new AWS.DynamoDB.DocumentClient();
+
+  var table = "iplplayoffpool2021dev";
+
+  var params = {
+    TableName: table,
+    Item: userData,
+  };
+
+  console.log("Adding a new item...");
+  docClient.put(params, function (err, data) {
+    if (err) {
+      console.error(
+        "Unable to add item. Error JSON:",
+        JSON.stringify(err, null, 2)
+      );
+    } else {
+      console.log("Added item:", JSON.stringify(data, null, 2));
+    }
+  });
+
   res.status(200).json({
     status: "Success",
-    timestamp: data.timestamp,
-    username: data.username,
-    groupname: data.groupname,
-    order: data.teamsObject,
+    timestamp: userData.timestamp,
+    username: userData.username,
+    groupname: userData.groupname,
+    order: userData.teamsObject,
   });
 };
 
@@ -59,108 +82,128 @@ const getGroupData = async (req, res, next) => {
     colObj.push(rowObj);
   }
 
-  database.find({ groupname: groupName }, function (err, docs) {
-    leaderBoardData = [];
-    for (var i = 0; i < docs.length; i++) {
-      points = 0;
-      username = docs[i].username;
-      for (var j = 0; j < 4; j++) {
-        if (colObj[j].teamName == "Chennai Super Kings") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "CSK") {
-              points = points + docs[i].teamsObject[k].id;
+  var docClient = new AWS.DynamoDB.DocumentClient();
+
+  var params = {
+    TableName: "iplplayoffpool2021dev",
+    KeyConditionExpression: "#gn = :xyz",
+    ExpressionAttributeNames: {
+      "#gn": "groupname",
+    },
+    ExpressionAttributeValues: {
+      ":xyz": groupName,
+    },
+  };
+
+  docClient.query(params, function (err, data) {
+    if (err) {
+      console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
+    } else {
+      console.log("Query succeeded.");
+      leaderBoardData = [];
+      data.Items.forEach(function (item) {
+        console.log(" -", item.username + ": " + item.groupname);
+        points = 0;
+        username = item.username;
+        for (var j = 0; j < 4; j++) {
+          if (colObj[j].teamName == "Chennai Super Kings") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "CSK") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Delhi Capitals") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "DC") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Delhi Capitals") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "DC") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Kolkata Knight Riders") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "KKR") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Kolkata Knight Riders") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "KKR") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Punjab Kings") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "PBKS") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Punjab Kings") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "PBKS") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Mumbai Indians") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "MI") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Mumbai Indians") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "MI") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Royal Challengers Bangalore") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "RCB") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Royal Challengers Bangalore") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "RCB") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Rajasthan Royals") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "RR") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Rajasthan Royals") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "RR") {
+                points = points + item.teamsObject[k].id;
+              }
             }
-          }
-        } else if (colObj[j].teamName == "Sunrisers Hyderabad") {
-          for (var k = 0; k < docs[i].teamsObject.length; k++) {
-            if (docs[i].teamsObject[k].team === "SRH") {
-              points = points + docs[i].teamsObject[k].id;
+          } else if (colObj[j].teamName == "Sunrisers Hyderabad") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "SRH") {
+                points = points + item.teamsObject[k].id;
+              }
             }
           }
         }
-      }
-      leaderBoardDataSingle = {
-        username: username,
-        points: points,
-      };
-      leaderBoardData.push(leaderBoardDataSingle);
-    }
-    leaderBoardData.sort(function (a, b) {
-      var x = a.points > b.points ? -1 : 1;
-      return x;
-    });
-    for (var i = 0; i < leaderBoardData.length; i++) {
-      leaderBoardData[i].rank = i + 1;
-    }
+        leaderBoardDataSingle = {
+          username: username,
+          points: points,
+        };
+        leaderBoardData.push(leaderBoardDataSingle);
+      });
 
-    for (var i = 0; i < docs.length; i++) {
-      picksTableDataSingle = {};
-      picksTableDataSingle.username = docs[i].username;
-      picksTableDataSingle.pointsArray = [];
-      for (var k = 0; k < docs[i].teamsObject.length; k++) {
-        if (docs[i].teamsObject[k].team === "CSK") {
-          picksTableDataSingle.pointsArray[0] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "DC") {
-          picksTableDataSingle.pointsArray[1] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "KKR") {
-          picksTableDataSingle.pointsArray[2] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "PBKS") {
-          picksTableDataSingle.pointsArray[3] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "MI") {
-          picksTableDataSingle.pointsArray[4] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "RCB") {
-          picksTableDataSingle.pointsArray[5] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "RR") {
-          picksTableDataSingle.pointsArray[6] = docs[i].teamsObject[k].id;
-        } else if (docs[i].teamsObject[k].team === "SRH") {
-          picksTableDataSingle.pointsArray[7] = docs[i].teamsObject[k].id;
+      leaderBoardData.sort(function (a, b) {
+        var x = a.points > b.points ? -1 : 1;
+        return x;
+      });
+      for (var i = 0; i < leaderBoardData.length; i++) {
+        leaderBoardData[i].rank = i + 1;
+      }
+
+      data.Items.forEach(function (item) {
+        picksTableDataSingle = {};
+        picksTableDataSingle.username = item.username;
+        picksTableDataSingle.pointsArray = [];
+        for (var k = 0; k < item.teamsObject.length; k++) {
+          if (item.teamsObject[k].team === "CSK") {
+            picksTableDataSingle.pointsArray[0] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "DC") {
+            picksTableDataSingle.pointsArray[1] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "KKR") {
+            picksTableDataSingle.pointsArray[2] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "PBKS") {
+            picksTableDataSingle.pointsArray[3] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "MI") {
+            picksTableDataSingle.pointsArray[4] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "RCB") {
+            picksTableDataSingle.pointsArray[5] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "RR") {
+            picksTableDataSingle.pointsArray[6] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "SRH") {
+            picksTableDataSingle.pointsArray[7] = item.teamsObject[k].id;
+          }
         }
-      }
 
-      picksTableData.push(picksTableDataSingle);
+        picksTableData.push(picksTableDataSingle);
+      });
+
+      res.status(200).json({
+        pointsTableData: colObj,
+        leaderBoardData: leaderBoardData,
+        picksTableData: picksTableData,
+      });
     }
-
-    res.status(200).json({
-      pointsTableData: colObj,
-      leaderBoardData: leaderBoardData,
-      picksTableData: picksTableData,
-    });
   });
 };
 
