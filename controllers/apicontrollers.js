@@ -26,15 +26,12 @@ const submitData = (req, res, next) => {
     Item: userData,
   };
 
-  console.log("Adding a new item...");
   docClient.put(params, function (err, data) {
     if (err) {
       console.error(
         "Unable to add item. Error JSON:",
         JSON.stringify(err, null, 2)
       );
-    } else {
-      console.log("Added item:", JSON.stringify(data, null, 2));
     }
   });
 
@@ -97,10 +94,8 @@ const getGroupData = async (req, res, next) => {
     if (err) {
       console.error("Unable to query. Error:", JSON.stringify(err, null, 2));
     } else {
-      console.log("Query succeeded.");
       leaderBoardData = [];
       data.Items.forEach(function (item) {
-        console.log(" -", item.username + ": " + item.groupname);
         points = 0;
         username = item.username;
         for (var j = 0; j < 4; j++) {
