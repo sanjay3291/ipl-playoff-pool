@@ -40,7 +40,7 @@ class PointsTable extends Component {
   };
 
   componentDidMount() {
-    axios.get("/getGroupData").then((res) => {
+    axios.get("/getPointsTableData").then((res) => {
       const pointsTableData = res.data.pointsTableData;
       this.setState({ pointsTableData });
       let data = [];
@@ -64,12 +64,15 @@ class PointsTable extends Component {
   render() {
     //console.log(this.state.data);
     return (
-      <div className="container-fluid mt-5 containers " style={{
-        backgroundColor: "#add8e6",
-      }}>
+      <div
+        className="container-fluid mt-5 containers "
+        style={{
+          backgroundColor: "#add8e6",
+        }}
+      >
         <div>
-        <h1 style={{ color: "#004ba0" }}>Points Table</h1>
-      </div>
+          <h1 style={{ color: "#004ba0" }}>Points Table</h1>
+        </div>
         <MaterialTable
           title="Points Table"
           data={this.state.data}
@@ -82,11 +85,11 @@ class PointsTable extends Component {
             toolbar: false,
             exportButton: false,
             headerStyle: {
-                fontSize: 14,
-                fontWeight: "bold",
-                color: "white",
-                backgroundColor: "#004ba0"
-              }
+              fontSize: 14,
+              fontWeight: "bold",
+              color: "white",
+              backgroundColor: "#004ba0",
+            },
           }}
           style={{ fontSize: "16px" }}
         />

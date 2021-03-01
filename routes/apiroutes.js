@@ -8,7 +8,6 @@ router.post("/submitData", controllers.submitData);
 
 router.get("/getGroupData", controllers.getGroupData);
 
-
-
+router.get("/getPointsTableData", controllers.getPointsTableData);
 
 module.exports = router;
