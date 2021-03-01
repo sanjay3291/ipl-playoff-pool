@@ -55,8 +55,6 @@ const getGroupData = async (req, res, next) => {
   colObj = [];
   picksTableData = [];
 
-  database.loadDatabase();
-
   for (var i = 0; i < 8; i++) {
     var rowObj = new Object();
     let table = $(
