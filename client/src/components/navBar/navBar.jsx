@@ -43,13 +43,7 @@ class Navbar extends Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/Groups/BumChikBum">BumChikBum</a>
-                  </li>
-                  <li>
-                    <a href="/Groups/LocalBoys">LocalBoys</a>
-                  </li>
-                  <li>
-                    <a href="/">NewGroup</a>
+                    <a href="/GroupsPre">NewGroup</a>
                   </li>
                 </ul>
               </li>
@@ -70,3 +64,12 @@ class Navbar extends Component {
 }
 
 export default Navbar;
+
+
+/*
+<li>
+                    <a href="/Groups/BumChikBum">BumChikBum</a>
+                  </li>
+                  <li>
+                    <a href="/Groups/LocalBoys">LocalBoys</a>
+                  </li>*/

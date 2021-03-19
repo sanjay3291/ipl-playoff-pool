@@ -105,7 +105,7 @@ const getGroupData = async (req, res, next) => {
   var docClient = new AWS.DynamoDB.DocumentClient();
 
   var params = {
-    TableName: "iplplayoffpool2021dev",
+    TableName: "iplplayoffpool2021prod",
     KeyConditionExpression: "#gn = :xyz",
     ExpressionAttributeNames: {
       "#gn": "groupname",
