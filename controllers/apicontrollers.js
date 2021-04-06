@@ -19,7 +19,7 @@ const submitData = (req, res, next) => {
 
   var docClient = new AWS.DynamoDB.DocumentClient();
 
-  var table = "iplplayoffpool2021dev";
+  var table = "iplplayoffpool2021prod";
 
   var params = {
     TableName: table,
