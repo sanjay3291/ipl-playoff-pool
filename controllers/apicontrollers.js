@@ -50,33 +50,24 @@ const getPointsTableData = async (req, res) => {
   colObj = [];
   try {
     const $ = await fetchHTML(
-      "https://www.espncricinfo.com/table/series/8048/season/2020/indian-premier-league"
+      "https://www.cricbuzz.com/cricket-series/3472/indian-premier-league-2021/points-table"
     );
 
     for (var i = 0; i < 8; i++) {
       var rowObj = new Object();
       let table = $(
-        "#main-container > div > div.series-standings-page-wrapper > div > div:nth-child(2) > div > div > div > table > tbody",
+        "#page-wrapper > div:nth-child(7) > div.cb-col-67.cb-col.cb-left.cb-hm-rght > table > tbody",
         $.html()
       );
-      rowObj.rank =
-        table[0].children[
-          i
-        ].children[0].children[0].children[0].children[0].data;
-      rowObj.teamImage =
-        table[0].children[
-          i
-        ].children[0].children[0].children[1].children[0].children[0].children[0].children[0].attribs.src;
+      rowObj.rank = i + 1;
       rowObj.teamName =
-        table[0].children[
-          i
-        ].children[0].children[0].children[1].children[0].children[1].children[0].children[0].data;
-      rowObj.M = table[0].children[i].children[1].children[0].data;
-      rowObj.W = table[0].children[i].children[2].children[0].data;
-      rowObj.L = table[0].children[i].children[3].children[0].data;
-      rowObj.NR = table[0].children[i].children[4].children[0].data;
-      rowObj.PT = table[0].children[i].children[5].children[0].data;
-      rowObj.NRR = table[0].children[i].children[6].children[0].data;
+        table[0].children[2 * i].children[0].children[0].children[0].data;
+      rowObj.M = table[0].children[2 * i].children[1].children[0].data;
+      rowObj.W = table[0].children[2 * i].children[2].children[0].data;
+      rowObj.L = table[0].children[2 * i].children[3].children[0].data;
+      rowObj.NR = table[0].children[2 * i].children[5].children[0].data;
+      rowObj.PT = table[0].children[2 * i].children[6].children[0].data;
+      rowObj.NRR = table[0].children[2 * i].children[7].children[0].data;
       colObj.push(rowObj);
     }
     if (res !== undefined) {
@@ -233,3 +224,25 @@ module.exports.sayHello = sayHello;
 module.exports.getGroupData = getGroupData;
 
 module.exports.getPointsTableData = getPointsTableData;
+
+
+//Code to scrape points table from Cricinfo website.
+//"#main-container > div > div.series-standings-page-wrapper > div > div:nth-child(2) > div > div > div > table > tbody"
+/*rowObj.rank =
+        table[0].children[
+          i
+        ].children[0].children[0].children[0].children[0].data;
+      rowObj.teamImage =
+        table[0].children[
+          i
+        ].children[0].children[0].children[1].children[0].children[0].children[0].children[0].attribs.src;
+      rowObj.teamName =
+        table[0].children[
+          i
+        ].children[0].children[0].children[1].children[0].children[1].children[0].children[0].data;
+      rowObj.M = table[0].children[i].children[1].children[0].data;
+      rowObj.W = table[0].children[i].children[2].children[0].data;
+      rowObj.L = table[0].children[i].children[3].children[0].data;
+      rowObj.NR = table[0].children[i].children[4].children[0].data;
+      rowObj.PT = table[0].children[i].children[5].children[0].data;
+      rowObj.NRR = table[0].children[i].children[6].children[0].data;*/

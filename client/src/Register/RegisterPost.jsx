@@ -14,7 +14,7 @@ class RegisterPost extends Component {
           <blockquote class="oval-thought-border">
             <p>
               Uh-Oh, The registration window for this years competition is
-              closed. Please visit this site before next years competition to
+              closed. Please visit this site before next year's competition to
               participate.
             </p>
           </blockquote>
