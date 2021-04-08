@@ -9,7 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 const NameSchema = Yup.object().shape({
   username: Yup.string()
     .min(4, "Mininum 4 characters!")
-    .max(20, "Maximum 20 characters!")
+    .max(25, "Maximum 25 characters!")
     .required("username is required"),
 
   groupname: Yup.string()
