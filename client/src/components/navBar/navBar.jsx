@@ -43,12 +43,6 @@ class Navbar extends Component {
                 </a>
                 <ul className="dropdown-menu">
                   <li>
-                    <a href="/Groups/ArrayShastri">ArrayShastri</a>
-                  </li>
-                  <li>
-                    <a href="/Groups/AzRoomies">AzRoomies</a>
-                  </li>
-                  <li>
                     <a href="/Groups/BumchikBum">BumchikBum</a>
                   </li>
                   <li>

@@ -60,24 +60,32 @@ class RegistrationForm extends Component {
                 serverObject.groupname = values.groupname;
                 var teamsObject_updated = [
                   {
-                    id: 8,
+                    id: 10,
                     team: "CSK",
                   },
                   {
-                    id: 7,
+                    id: 9,
                     team: "DC",
                   },
                   {
-                    id: 6,
+                    id: 8,
+                    team: "GT",
+                  },
+                  {
+                    id: 7,
                     team: "KKR",
                   },
                   {
+                    id: 6,
+                    team: "LSG",
+                  },
+                  {
                     id: 5,
-                    team: "PBKS",
+                    team: "MI",
                   },
                   {
                     id: 4,
-                    team: "MI",
+                    team: "PBKS",
                   },
                   {
                     id: 3,

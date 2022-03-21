@@ -19,7 +19,7 @@ const submitData = (req, res, next) => {
 
   var docClient = new AWS.DynamoDB.DocumentClient();
 
-  var table = "iplplayoffpool2021prod";
+  var table = "iplplayoffpool2021dev";
 
   var params = {
     TableName: table,
@@ -96,7 +96,7 @@ const getGroupData = async (req, res, next) => {
   var docClient = new AWS.DynamoDB.DocumentClient();
 
   var params = {
-    TableName: "iplplayoffpool2021prod",
+    TableName: "iplplayoffpool2021dev",
     KeyConditionExpression: "#gn = :xyz",
     ExpressionAttributeNames: {
       "#gn": "groupname",
@@ -127,21 +127,33 @@ const getGroupData = async (req, res, next) => {
                 points = points + item.teamsObject[k].id;
               }
             }
+          } else if (pointsTableData[j].teamName == "Gujarat Titans") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "GT") {
+                points = points + item.teamsObject[k].id;
+              }
+            }
           } else if (pointsTableData[j].teamName == "Kolkata Knight Riders") {
             for (var k = 0; k < item.teamsObject.length; k++) {
               if (item.teamsObject[k].team === "KKR") {
                 points = points + item.teamsObject[k].id;
               }
             }
-          } else if (pointsTableData[j].teamName == "Punjab Kings") {
+          } else if (pointsTableData[j].teamName == "Lucknow Super Giants") {
             for (var k = 0; k < item.teamsObject.length; k++) {
-              if (item.teamsObject[k].team === "PBKS") {
+              if (item.teamsObject[k].team === "LSG") {
                 points = points + item.teamsObject[k].id;
               }
             }
           } else if (pointsTableData[j].teamName == "Mumbai Indians") {
             for (var k = 0; k < item.teamsObject.length; k++) {
               if (item.teamsObject[k].team === "MI") {
+                points = points + item.teamsObject[k].id;
+              }
+            }
+          } else if (pointsTableData[j].teamName == "Punjab Kings") {
+            for (var k = 0; k < item.teamsObject.length; k++) {
+              if (item.teamsObject[k].team === "PBKS") {
                 points = points + item.teamsObject[k].id;
               }
             }
@@ -191,18 +203,22 @@ const getGroupData = async (req, res, next) => {
             picksTableDataSingle.pointsArray[0] = item.teamsObject[k].id;
           } else if (item.teamsObject[k].team === "DC") {
             picksTableDataSingle.pointsArray[1] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "KKR") {
+          } else if (item.teamsObject[k].team === "GT") {
             picksTableDataSingle.pointsArray[2] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "PBKS") {
+          } else if (item.teamsObject[k].team === "KKR") {
             picksTableDataSingle.pointsArray[3] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "MI") {
+          } else if (item.teamsObject[k].team === "LSG") {
             picksTableDataSingle.pointsArray[4] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "RCB") {
+          } else if (item.teamsObject[k].team === "MI") {
             picksTableDataSingle.pointsArray[5] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "RR") {
+          } else if (item.teamsObject[k].team === "PBKS") {
             picksTableDataSingle.pointsArray[6] = item.teamsObject[k].id;
-          } else if (item.teamsObject[k].team === "SRH") {
+          } else if (item.teamsObject[k].team === "RCB") {
             picksTableDataSingle.pointsArray[7] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "RR") {
+            picksTableDataSingle.pointsArray[8] = item.teamsObject[k].id;
+          } else if (item.teamsObject[k].team === "SRH") {
+            picksTableDataSingle.pointsArray[9] = item.teamsObject[k].id;
           }
         }
 

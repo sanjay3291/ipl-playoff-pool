@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { Router, Switch, Route } from "react-router-dom";
 
 import Home from "./Home/Home";
-//import Register from "./Register/Register";
-import RegisterPost from "./Register/RegisterPost";
+import Register from "./Register/Register";
+//import RegisterPost from "./Register/RegisterPost";
 import Groups from "./Groups/Groups";
 //import GroupsPre from "./Groups/GroupsPre";
 import About from "./About/About";

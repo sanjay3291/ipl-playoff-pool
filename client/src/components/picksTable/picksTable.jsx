@@ -106,9 +106,11 @@ export default function PicksTable(props) {
                           </StyledTableCell>
                           <StyledTableCell>CSK</StyledTableCell>
                           <StyledTableCell>DC</StyledTableCell>
+                          <StyledTableCell>GT</StyledTableCell>
                           <StyledTableCell>KKR</StyledTableCell>
-                          <StyledTableCell>PBKS</StyledTableCell>
+                          <StyledTableCell>LSG</StyledTableCell>
                           <StyledTableCell>MI</StyledTableCell>
+                          <StyledTableCell>PBKS</StyledTableCell>
                           <StyledTableCell>RCB</StyledTableCell>
                           <StyledTableCell>RR</StyledTableCell>
                           <StyledTableCell>SRH</StyledTableCell>
@@ -148,6 +150,12 @@ export default function PicksTable(props) {
                                 </StyledTableCell>
                                 <StyledTableCell>
                                   {row.pointsArray[7]}
+                                </StyledTableCell>
+                                <StyledTableCell>
+                                  {row.pointsArray[8]}
+                                </StyledTableCell>
+                                <StyledTableCell>
+                                  {row.pointsArray[9]}
                                 </StyledTableCell>
                               </StyledTableRow>
                             ))
