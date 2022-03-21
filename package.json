@@ -10,7 +10,7 @@
     "dev": "concurrently --kill-others-on-fail \"npm run client\" \"npm run server\"",
     "client:build": "cd client && npm run build",
     "start": "node server.js",
-    "heroku-postbuild": "cd client && npm install && npm run build"
+    "heroku-postbuild": "cd client && npm install --legacy-peer-deps && npm run build"
   },
   "keywords": [
     "indian",
