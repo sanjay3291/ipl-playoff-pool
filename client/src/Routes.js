@@ -17,7 +17,7 @@ export default class Routes extends Component {
           <Route path="/" exact component={Home} />
           <Route
             path="/Register"
-            render={(props) => <RegisterPost {...props} />}
+            render={(props) => <Register {...props} />}
           />
           <Route path="/Groups" render={(props) => <Groups {...props} />} />
           <Route path="/About" render={(props) => <About {...props} />} />
