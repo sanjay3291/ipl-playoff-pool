@@ -50,10 +50,10 @@ const getPointsTableData = async (req, res) => {
   colObj = [];
   try {
     const $ = await fetchHTML(
-      "https://www.cricbuzz.com/cricket-series/3472/indian-premier-league-2021/points-table"
+      "https://www.cricbuzz.com/cricket-series/4061/indian-premier-league-2022/points-table"
     );
 
-    for (var i = 0; i < 8; i++) {
+    for (var i = 0; i < 10; i++) {
       var rowObj = new Object();
       let table = $(
         "#page-wrapper > div:nth-child(7) > div.cb-col-67.cb-col.cb-left.cb-hm-rght > table > tbody",
