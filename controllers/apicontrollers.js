@@ -19,7 +19,7 @@ const submitData = (req, res, next) => {
 
   var docClient = new AWS.DynamoDB.DocumentClient();
 
-  var table = "iplplayoffpool2021dev";
+  var table = "iplplayoffpool2022prod";
 
   var params = {
     TableName: table,
@@ -96,7 +96,7 @@ const getGroupData = async (req, res, next) => {
   var docClient = new AWS.DynamoDB.DocumentClient();
 
   var params = {
-    TableName: "iplplayoffpool2021dev",
+    TableName: "iplplayoffpool2022prod",
     KeyConditionExpression: "#gn = :xyz",
     ExpressionAttributeNames: {
       "#gn": "groupname",

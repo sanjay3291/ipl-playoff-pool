@@ -10,7 +10,7 @@ class BioPage extends Component {
           <p>
             Hello, Thanks for visiting the site.<br />
             <br />
-            A bit about me, I'm Sanjay, Controls Engineer at Virgin Hyperloop, ardent fan, avid watcher and amateur player of cricket.<br />
+            A bit about me, I'm Sanjay, Controls Engineer at Rivian Automotive, ardent fan, avid watcher and amateur player of cricket.<br />
             <br />
             I've seen a lot of pool competitions for other sports leagues like NFL, EPL and NBA. I always felt that it would be fun if we have something similar with Cricket.<br />
             <br />
