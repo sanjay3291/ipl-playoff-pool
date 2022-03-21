@@ -35,7 +35,7 @@ class Team extends Component {
             <TableCell
               style={{ fontSize: "8pt", fontWeight: "bold", color: "#004BA0" }}
             >
-              {8 - this.props.index} Points
+              {10 - this.props.index} Points
             </TableCell>
           </TableRow>
         )}

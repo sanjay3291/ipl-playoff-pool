@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(30),
     fontWeight: theme.typography.fontWeightBold,
-    color: "#004ba0",
+    color: "#F9CD05",
   },
   details: {
     alignItems: "center",
@@ -37,14 +37,16 @@ const useStyles = makeStyles((theme) => ({
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "#004ba0",
-    color: theme.palette.common.white,
+    backgroundColor: "#F9CD05",
+    //color: theme.palette.common.white,
     fontSize: "0.9rem",
     paddingRight: 3,
     paddingLeft: 3,
+    color: "#000"
   },
   body: {
     fontSize: "0.9rem",
+    color: "#000",
     paddingRight: 3,
     paddingLeft: 3,
   },
@@ -86,7 +88,7 @@ export default function PicksTable(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading}>
+            <Typography className={classes.heading} style={{ color: "#1D418C" }}>
               Click here to see the picks of other participants.
             </Typography>
           </AccordionSummary>
@@ -101,7 +103,7 @@ export default function PicksTable(props) {
                     >
                       <TableHead>
                         <TableRow>
-                          <StyledTableCell style={{ width: "20%" }}>
+                          <StyledTableCell style={{ width: "20%", color: "#000" }}>
                             Username
                           </StyledTableCell>
                           <StyledTableCell>CSK</StyledTableCell>

@@ -28,8 +28,8 @@
     color: #fff;
     display: block;
     text-align: left;
-    background: #D1AB3E;
-    color: #222;
+    background: #1D418C;
+    color: #fff;
     padding: 20px;
     font-size: 20px;
     font-size: 900;
@@ -43,8 +43,8 @@
   }
   
   #main #faq .card .card-header .btn-header-link.collapsed {
-    background: #004BA0;
-    color: #fff;
+    background: #F9CD05;
+    color: #000;
   }
   
   #main #faq .card .card-header .btn-header-link.collapsed:after {
@@ -52,7 +52,7 @@
   }
   
   #main #faq .card .collapsing {
-    background: #D1AB3E;
+    background: #1D418C;
     line-height: 30px;
   }
   
@@ -61,7 +61,7 @@
   }
   
   #main #faq .card .collapse.show {
-    background: #D1AB3E;
+    background: #1D418C;
     line-height: 30px;
-    color: #222;
+    color: #fff;
   }

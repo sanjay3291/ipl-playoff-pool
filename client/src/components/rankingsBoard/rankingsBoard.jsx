@@ -12,11 +12,12 @@ import { FaMedal } from "react-icons/fa";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "#004ba0",
+    backgroundColor: "#F9CD05",
     color: theme.palette.common.white,
   },
   body: {
     fontSize: 14,
+    color: "#000" 
   },
 }))(TableCell);
 
@@ -56,7 +57,7 @@ export default function RankingsBoard(props) {
   return (
     <div className="container-fluid  mt-5 mb-5 p-5">
       <div>
-        <h1 className="text-center" style={{ color: "#004ba0" }}>Leader Board</h1>
+        <h1 className="text-center" style={{ color: "#1D418C" }}>Leader Board</h1>
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-4">
@@ -64,13 +65,13 @@ export default function RankingsBoard(props) {
             <Table className={classes.table} aria-label="customized table">
               <TableHead>
                 <TableRow>
-                  <StyledTableCell style={{ width: "10%", fontSize: 14 }}>
+                  <StyledTableCell style={{ width: "10%", fontSize: 14, color: "#000" }}>
                     Rank
                   </StyledTableCell>
-                  <StyledTableCell style={{ width: "60%", fontSize: 14 }}>
+                  <StyledTableCell style={{ width: "60%", fontSize: 14, color: "#000"  }}>
                     Username
                   </StyledTableCell>
-                  <StyledTableCell style={{ width: "30%", fontSize: 14 }}>
+                  <StyledTableCell style={{ width: "30%", fontSize: 14, color: "#000"  }}>
                     Points
                   </StyledTableCell>
                 </TableRow>
