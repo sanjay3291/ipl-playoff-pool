@@ -40,7 +40,7 @@ class SortTeams extends Component {
 
     for (var i = 0; i < newColumn.teamIds.length; i++) {
       teamsObject.push({
-        id: 8 - i,
+        id: 10 - i,
         team: this.state.teams[newColumn.teamIds[i]].key,
       });
     }
