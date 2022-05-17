@@ -61,7 +61,7 @@ const getPointsTableData = async (req, res) => {
       );
       rowObj.rank = i + 1;
       rowObj.teamName =
-        table[0].children[2 * i].children[0].children[0].children[0].data;
+      table[0].children[2 * i].children[0].children[0].children[0].children[1].children[0].data;
       rowObj.M = table[0].children[2 * i].children[1].children[0].data;
       rowObj.W = table[0].children[2 * i].children[2].children[0].data;
       rowObj.L = table[0].children[2 * i].children[3].children[0].data;
