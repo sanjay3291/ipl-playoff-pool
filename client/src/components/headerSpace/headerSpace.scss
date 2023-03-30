@@ -1,7 +1,7 @@
 
 .bg-overlay {
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
-    url(ipl_champions_2021.jpg);
+    url(ipl_champions_2022.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -26,14 +26,14 @@
   color: white;
   mix-blend-mode: difference !important;
   font: 900 10vmin/10vh cookie, cursive !important; 
-  filter: drop-shadow(0.02em 0.02em #F9CD05) !important;
+  filter: drop-shadow(0.02em 0.02em #DBBE6E) !important;
   text-align: center !important;
 }
 
 #mybuttons{
-  background-color: #F9CD05;
+  background-color: #DBBE6E;
 }
 
 #mybuttons:hover{
-  background-color: #1D418C!important;
+  background-color: #1B2133!important;
 }

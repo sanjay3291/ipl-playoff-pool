@@ -12,7 +12,7 @@ import { FaMedal } from "react-icons/fa";
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "#F9CD05",
+    backgroundColor: "#DBBE6E",
     color: theme.palette.common.white,
   },
   body: {
@@ -57,7 +57,7 @@ export default function RankingsBoard(props) {
   return (
     <div className="container-fluid  mt-5 mb-5 p-5">
       <div>
-        <h1 className="text-center" style={{ color: "#1D418C" }}>Leader Board</h1>
+        <h1 className="text-center" style={{ color: "#1B2133" }}>Leader Board</h1>
       </div>
       <div className="row justify-content-center">
         <div className="col-lg-4">

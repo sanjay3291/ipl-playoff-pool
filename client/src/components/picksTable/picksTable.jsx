@@ -23,7 +23,7 @@ const useStyles = makeStyles((theme) => ({
   heading: {
     fontSize: theme.typography.pxToRem(30),
     fontWeight: theme.typography.fontWeightBold,
-    color: "#F9CD05",
+    color: "#DBBE6E",
   },
   details: {
     alignItems: "center",
@@ -37,7 +37,7 @@ const useStyles = makeStyles((theme) => ({
 
 const StyledTableCell = withStyles((theme) => ({
   head: {
-    backgroundColor: "#F9CD05",
+    backgroundColor: "#DBBE6E",
     //color: theme.palette.common.white,
     fontSize: "0.9rem",
     paddingRight: 3,
@@ -88,7 +88,7 @@ export default function PicksTable(props) {
             aria-controls="panel1a-content"
             id="panel1a-header"
           >
-            <Typography className={classes.heading} style={{ color: "#1D418C" }}>
+            <Typography className={classes.heading} style={{ color: "#1B2133" }}>
               Click here to see the picks of other participants.
             </Typography>
           </AccordionSummary>

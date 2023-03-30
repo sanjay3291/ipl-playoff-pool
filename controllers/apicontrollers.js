@@ -19,7 +19,7 @@ const submitData = (req, res, next) => {
 
   var docClient = new AWS.DynamoDB.DocumentClient();
 
-  var table = "iplplayoffpool2022prod";
+  var table = "iplplayoffpool2023prod";
 
   var params = {
     TableName: table,
@@ -50,7 +50,7 @@ const getPointsTableData = async (req, res) => {
   colObj = [];
   try {
     const $ = await fetchHTML(
-      "https://www.cricbuzz.com/cricket-series/4061/indian-premier-league-2022/points-table"
+      "https://www.cricbuzz.com/cricket-series/5945/indian-premier-league-2023/points-table"
     );
 
     for (var i = 0; i < 10; i++) {
@@ -96,7 +96,7 @@ const getGroupData = async (req, res, next) => {
   var docClient = new AWS.DynamoDB.DocumentClient();
 
   var params = {
-    TableName: "iplplayoffpool2022prod",
+    TableName: "iplplayoffpool2023prod",
     KeyConditionExpression: "#gn = :xyz",
     ExpressionAttributeNames: {
       "#gn": "groupname",

@@ -71,7 +71,7 @@ class PointsTable extends Component {
         }}
       >
         <div>
-          <h1 style={{ color: "#1D418C" }}>Points Table</h1>
+          <h1 style={{ color: "#1B2133" }}>Points Table</h1>
         </div>
         <MaterialTable
           title="Points Table"
@@ -88,7 +88,7 @@ class PointsTable extends Component {
               fontSize: 14,
               fontWeight: "bold",
               color: "black",
-              backgroundColor: "#F9CD05",
+              backgroundColor: "#DBBE6E",
             },
           }}
           style={{ fontSize: "16px" }}

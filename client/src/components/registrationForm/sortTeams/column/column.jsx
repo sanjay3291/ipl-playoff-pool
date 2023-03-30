@@ -20,7 +20,7 @@ class Column extends Component {
             style={{
               fontSize: "16pt",
               fontWeight: "bold",
-              color: "#1D418C",
+              color: "#1B2133",
               textAlign: "center",
             }}
           >
@@ -30,7 +30,7 @@ class Column extends Component {
             <InfoOutlinedIcon
               fontSize="inherit"
               style={{
-                color: "#1D418C",
+                color: "#1B2133",
                 display: "inline-block",
                 textAlign: "right",
               }}
