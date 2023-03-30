@@ -1,6 +1,9 @@
 {
   "name": "ipl-playoff-pool",
   "version": "1.0.0",
+  "engines": {
+    "npm": "7.x"
+  },
   "description": "IPL playoff pool competition webapp",
   "main": "server.js",
   "scripts": {
